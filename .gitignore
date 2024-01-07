@@ -1,0 +1,6 @@
+dbdata/
+node_modules/
+*/node_modules/
+.docker
+*/.docker
+.history/
