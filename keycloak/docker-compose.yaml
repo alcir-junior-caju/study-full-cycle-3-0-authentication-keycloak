@@ -3,7 +3,8 @@ version: '3'
 services:
 
   keycloak:
-    image: quay.io/keycloak/keycloak:21.1
+    # image: quay.io/keycloak/keycloak:21.1
+    build: .
     command: start-dev
     ports:
       - 8787:8080
@@ -14,6 +15,8 @@ services:
       - KC_DB_URL=jdbc:mysql://db:3306/keycloak
       - KC_DB_USERNAME=root
       - KC_DB_PASSWORD=root
+    volumes:
+      - ./keywind-master/theme/keywind:/opt/keycloak/themes/keywind
     depends_on:
       db:
         condition: service_healthy

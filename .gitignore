@@ -4,3 +4,4 @@ node_modules/
 .docker
 */.docker
 .history/
+.DS_Store

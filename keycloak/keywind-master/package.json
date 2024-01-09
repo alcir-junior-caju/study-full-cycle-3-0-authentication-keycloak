@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "keywind",
+  "scripts": {
+    "build": "tsc && vite build",
+    "build:jar": "vite-node scripts/build",
+    "dev": "vite dev",
+    "test": "mvn test"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3",
+    "rfc4648": "^1.5.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/alpinejs": "^3.13.6",
+    "@types/archiver": "^5.3.4",
+    "@types/node": "^20.10.7",
+    "archiver": "^6.0.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1",
+    "vite-node": "^0.34.7"
+  }
+}
