@@ -125,9 +125,16 @@ app.get('/callback', async (req, res) => {
     res.json(result);
 });
 
-app.get("/admin", middlewareIsAuth, (req, res) => {
+app.get("/admin", middlewareIsAuth, async (req, res) => {
     //@ts-expect-error - type mismatch
     res.json(req.session.user);
+    const response = await fetch("https://api.linkedin.com/v2/me", {
+      headers: {
+        //@ts-expect-error - type mismatch
+        Authorization: `Bearer ${req.session.access_token}`,
+      },
+    });
+    console.log('RES', await response.json());
 });
 
 app.listen(3333, () => {
